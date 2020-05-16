@@ -2,11 +2,16 @@ var express = require("express");
 var path = require("path");
 var app = express();
 var http = require("http").Server(app);
-var io = require("socket.io")(http);
+var io = require("socket.io")(http, {
+  origins: "*:*"
+});
+var cors = require("cors");
 
 // app.get("/", function(req, res) {
 //   res.send("index.html");
 // });
+
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, "public")));
 
