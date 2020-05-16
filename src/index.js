@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 
 // app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 server.listen(3000, function() {
   //server.listen(process.env.PORT || 3000, function() {
