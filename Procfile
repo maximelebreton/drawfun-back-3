@@ -1,1 +1,1 @@
-web: PORT=3000 node src/index.js localhost 3000
+web: PORT=3000 node src/index.js
