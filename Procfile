@@ -1,1 +1,1 @@
-web: node src/index.js localhost 3000
+web: node src/index.js

@@ -25,10 +25,10 @@ app.use(function(req, res, next) {
 
 app.use(express.static("public"));
 
-server.listen(3000, function() {
-  //server.listen(process.env.PORT || 3000, function() {
-  //  console.log("listening on *:" + (process.env.PORT || 3000));
-  console.log("listening on *:" + 3000);
+//server.listen(3000, function() {
+server.listen(process.env.PORT || 3000, function() {
+  console.log("listening on *:" + (process.env.PORT || 3000));
+  //console.log("listening on *:" + 3000);
 });
 
 io.on("connection", function(socket) {
