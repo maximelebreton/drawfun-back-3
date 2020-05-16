@@ -1,10 +1,8 @@
 var express = require("express");
 var path = require("path");
 var app = express();
-var http = require("http").Server(app);
-var io = require("socket.io")(http, {
-  origins: "*:*"
-});
+var server = require("http").Server(app);
+var io = require("socket.io").listen(server);
 var cors = require("cors");
 
 // app.get("/", function(req, res) {
@@ -17,7 +15,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.static("public"));
 
-http.listen(process.env.PORT || 3000, function() {
+server.listen(process.env.PORT || 3000, function() {
   console.log("listening on *:" + (process.env.PORT || 3000));
 });
 
