@@ -13,8 +13,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.static("public"));
 
-http.listen(process.env.PORT || 3000, function() {
-  console.log("listening on *:" + (process.env.PORT || 3000));
+http.listen(3000, function() {
+  //http.listen(process.env.PORT || 3000, function() {
+  //  console.log("listening on *:" + (process.env.PORT || 3000));
+  console.log("listening on *:" + 3000);
 });
 
 io.on("connection", function(socket) {
