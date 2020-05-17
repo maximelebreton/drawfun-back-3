@@ -29,10 +29,10 @@ io.on("connection", function(socket) {
   socket.on("connect", function() {
     console.log("connection established");
   });
-  socket.on("clientToServerPan", data => {
+  socket.on("clientEvent", data => {
     console.log("onpan from: " + id);
     data.id = id;
-    socket.broadcast.emit("serverToClientPan", data);
+    socket.broadcast.emit("serverEvent", data);
   });
   socket.on("disconnect", function() {
     console.log("connection closed");
