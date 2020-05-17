@@ -36,5 +36,6 @@ io.on("connection", function(socket) {
   });
   socket.on("disconnect", function() {
     console.log("connection closed");
+    socket.broadcast.emit("clientdisconnect", socket.id);
   });
 });
