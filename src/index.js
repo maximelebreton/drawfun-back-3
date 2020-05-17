@@ -28,6 +28,9 @@ io.on("connection", function(socket) {
   });
   socket.on("connect", function() {
     console.log("connection established");
+    socket.broadcast.emit("clientconnect", {
+      id: socket.id
+    });
   });
   socket.on("clientEvent", data => {
     console.log("onpan from: " + id);
@@ -36,6 +39,8 @@ io.on("connection", function(socket) {
   });
   socket.on("disconnect", function() {
     console.log("connection closed");
-    socket.broadcast.emit("clientdisconnect", { id: socket.id });
+    socket.broadcast.emit("clientdisconnect", {
+      id: socket.id
+    });
   });
 });
